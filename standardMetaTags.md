@@ -52,18 +52,49 @@ Please note open graph's basic metadata implementation includes a prefix="og: ht
 
 - [Twitter card validator](https://cards-dev.twitter.com/validator)
 
+
+### STRUCTURED DATA/SCHEMA
+
+Structured data/schema should be implemented where appropriate using JSON-ld, not Microdata.
+
+Structured data/schema should be delivered server side where possible and placed within a `<script type="application/ld+json"></script>` tag within the `<head>` of the page. Easily locate a page's markup by finding `ld+json` in devtools.
+
+Embedding multiple types on a page, if appropriate, can be added as an array via the `@graph` property and tested for no errors, although it's less documented. Example:
+```
+<script type="application/ld+json">
+{
+    "@context":"http://schema.org",
+    "@graph":[
+        {
+            "@context":"http://schema.org","@type":"ReportageNewsArticle",
+            [...]
+        },
+        {
+            "@context":"http://schema.org","@type":"AnotherExample",
+            [...]
+        }
+    ]
+}
+</script>
+```
+
+Tools/References if needed:
+
+- [General Google guidelines for structured data/schema usage](https://developers.google.com/search/docs/guides/sd-policies)
+
+- Specific schema types of interest and supported by Google:
+  - [Article](https://developers.google.com/search/docs/data-types/article); see [Schema.org's more specific subtypes](https://schema.org/NewsArticle) if validating correct usage of ReportageNewsArticle or other subtypes as necessary
+  - [Breadcrumb](https://developers.google.com/search/docs/data-types/breadcrumb)
+  - [Event](https://developers.google.com/search/docs/data-types/event)
+  - [Logo](https://developers.google.com/search/docs/data-types/logo)
+  - [Product](https://developers.google.com/search/docs/data-types/product)
+  - [Recipe](https://developers.google.com/search/docs/data-types/recipe)
+  - [Review snippet](https://developers.google.com/search/docs/data-types/review-snippet)
+  - [Subscription and paywalled content](https://developers.google.com/search/docs/data-types/paywalled-content)
+- [Google Structured Data Testing Tool, must show no errors](https://search.google.com/structured-data/testing-tool), officially migrating to schema.org [here](https://validator.schema.org/)
+
+
 #### OTHER ON-PAGE CONSIDERATIONS
 - use a single h1 tag for the main header on a page, descriptive of content; use structured h2 and h3 tags for other onpage headers as needed
 - duplicate title and description tags across different URLs should be avoided; all should be unique
 - img tags should include an alt attribute that is unique and descriptive of the visual content
-
-SCHEMA
-
-Schema should be implemented where appropriate using JSON-ld, not Microdata.
-
-Tools/References if needed:
-```
-https://developers.google.com/search/docs/data-types/product
-https://search.google.com/structured-data/testing-tool
-https://search.google.com/test/rich-results
-https://schema.org/
