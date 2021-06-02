@@ -39,13 +39,15 @@ The variable values here (`${value}`) should be unique to each page and rendered
 - `${twitterImageAlt}` = value same as alt attribute of main image, if available, 420 characters max
 
 #### Notes/reference:
-Please note open graph's basic metadata implementation includes a prefix="og: http://ogp.me/ns#" on the html tag.
-https://ogp.me/
-https://developers.facebook.com/tools/debug/sharing/
-https://developers.facebook.com/docs/sharing/best-practices/
-https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary
-https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary-card-with-large-image
-https://cards-dev.twitter.com/validator
+
+- Please note open graph's basic metadata implementation includes a prefix="og: http://ogp.me/ns#" on the html tag.
+
+[Facebook sharing debugger for og tags](https://developers.facebook.com/tools/debug/sharing/)
+[Facebook sharing dev best practices](
+https://developers.facebook.com/docs/sharing/best-practices/)
+[Twitter cards dev overview](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary)
+[Twitter cards dev overview, large image](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary-card-with-large-image)
+[Twitter card validator](https://cards-dev.twitter.com/validator)
 
 #### OTHER ON-PAGE CONSIDERATIONS
 - use a single h1 tag for the main header on a page, descriptive of content; use structured h2 and h3 tags for other onpage headers as needed
