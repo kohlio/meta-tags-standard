@@ -24,7 +24,7 @@ The variable values here (`${value}`) should be unique to each page and rendered
 <meta name="twitter:title" content="`${pageTitle}`">
 <meta name="twitter:description" content="`${metaDesc}`">
 <meta name="twitter:image" content="`${twitterImage}`">
-<meta name="twitter:image:alt" content"`${twitterImageAlt}`">
+<meta name="twitter:image:alt" content="`${twitterImageAlt}`">
 ```
 
 - `${pageTitle}` = max 60 characters, unique to page, including relevant keyword placement for the page
